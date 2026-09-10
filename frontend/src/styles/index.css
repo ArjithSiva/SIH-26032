@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-paper text-ink font-sans;
+  }
+
+  body {
+    /* DBIM standard: body text is left-aligned by default. */
+    text-align: left;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-ink;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  :focus-visible {
+    outline: 2px solid #23543A;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* Standard "skip to main content" pattern: invisible until it receives
+     keyboard focus, so sighted mouse users never see it but keyboard/
+     screen-reader users can jump past the nav on every page. */
+  .skip-link {
+    @apply sr-only;
+  }
+  .skip-link:focus {
+    @apply not-sr-only fixed left-3 top-3 z-50 rounded bg-primary px-4 py-2 text-white;
+  }
+}
+
+@layer components {
+  /* DBIM type scale — mobile sizes are the base (Tailwind is mobile-first),
+     desktop sizes apply from the md breakpoint up. Weight choices follow the
+     standard's allowed sets: headings step down Bold -> SemiBold -> Medium;
+     Paragraph 1 defaults to Regular with a Bold variant; Paragraph 2 defaults
+     to Regular with SemiBold/Bold variants; Small text defaults to Regular
+     with a SemiBold variant. */
+  .text-h1 {
+    @apply text-[24px] font-bold leading-tight md:text-[36px];
+  }
+  .text-h2 {
+    @apply text-[20px] font-semibold leading-tight md:text-[24px];
+  }
+  .text-h3 {
+    @apply text-[16px] font-medium leading-snug md:text-[20px];
+  }
+  .text-p1 {
+    @apply text-[14px] font-normal leading-relaxed md:text-[16px];
+  }
+  .text-p1-strong {
+    @apply text-p1 font-bold;
+  }
+  .text-p2 {
+    @apply text-[12px] font-normal leading-relaxed md:text-[14px];
+  }
+  .text-p2-medium {
+    @apply text-p2 font-semibold;
+  }
+  .text-p2-strong {
+    @apply text-p2 font-bold;
+  }
+  .text-small {
+    @apply text-[10px] font-normal leading-normal md:text-[12px];
+  }
+  .text-small-strong {
+    @apply text-small font-semibold;
+  }
+
+  /* Table alignment per DBIM standard: left-align text, right-align
+     numbers, center-align column headers. */
+  .table-header {
+    @apply text-center text-p2-medium;
+  }
+  .table-cell-text {
+    @apply text-left text-p1;
+  }
+  .table-cell-number {
+    @apply text-right text-p1 tabular-nums;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded px-4 py-2 font-medium transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-dark;
+  }
+  .btn-accent {
+    @apply btn bg-accent text-ink hover:bg-accent-dark hover:text-white;
+  }
+  .btn-outline {
+    @apply btn border border-primary text-primary hover:bg-primary-light;
+  }
+  .card {
+    @apply bg-surface border border-border rounded-lg p-5 transition-all duration-200;
+  }
+  a.card:hover, button.card:hover {
+    @apply -translate-y-0.5 shadow-md;
+  }
+  .field-label {
+    @apply block text-sm font-medium text-ink mb-1;
+  }
+  .field-input {
+    @apply w-full rounded border border-border bg-white px-3 py-2 text-ink placeholder:text-muted focus:border-primary focus:ring-1 focus:ring-primary;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-sm px-2 py-0.5 text-xs font-medium;
+  }
+
+  /* Keep Google's Website Translator widget compact instead of its default
+     bulky styling - the widget's own markup isn't ours to restructure, so
+     this is scoped, minimal CSS rather than a component rewrite. */
+  .gt-widget .goog-te-gadget {
+    font-family: inherit !important;
+    font-size: 0 !important;
+  }
+  .gt-widget .goog-te-gadget > span > a {
+    @apply text-p2 text-primary;
+  }
+  .gt-widget select.goog-te-combo {
+    @apply rounded border border-border px-2 py-1 text-p2 text-ink;
+  }
+  body > .skiptranslate.goog-te-banner-frame {
+    display: none !important;
+  }
+  body {
+    top: 0 !important;
+  }
+}
