@@ -41,7 +41,8 @@ const allowedOrigins = (process.env.CORS_ORIGIN || '')
   .split(',')
   .map((o) => o.trim().replace(/\/+$/, ''))
   .filter(Boolean);
-const corsOrigin = allowedOrigins.length ? allowedOrigins : '*';
+const corsOrigin =
+  allowedOrigins.length && !allowedOrigins.includes('*') ? allowedOrigins : '*';
 
 const io = new Server(server, {
   cors: { origin: corsOrigin },
