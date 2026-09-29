@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">Modern Agriculture</title>
+  <desc id="desc">Green agriculture emblem with a growing plant over a field.</desc>
+  <circle cx="100" cy="100" r="94" fill="#fff" stroke="#267b3d" stroke-width="8"/>
+  <circle cx="100" cy="100" r="82" fill="#ffb718"/>
+  <path fill="#267b3d" d="M18 151c35-31 65-35 91-21 24 13 47 17 73 7-22 31-54 47-91 45-29-1-51-12-73-31Z"/>
+  <path fill="#267b3d" d="M96 153c-4-23-4-47-1-71 3-25 12-45 25-60l7 5c-11 18-17 37-19 59-2 23-1 46 4 67Z"/>
+  <path fill="#267b3d" d="M106 96c-17-9-29-24-31-45 18 2 32 11 38 27-2 6-5 12-7 18Z"/>
+  <path fill="#267b3d" d="M118 80c3-22 15-37 35-45 2 20-5 36-21 48-5-1-9-2-14-3Z"/>
+  <path fill="#267b3d" d="M101 125c-17-4-30-14-38-31 18-4 34 1 46 14-3 6-6 11-8 17Z"/>
+  <path fill="#267b3d" d="M116 113c12-17 28-26 49-26-6 18-19 29-37 34-4-3-8-5-12-8Z"/>
+  <path fill="#267b3d" d="M99 145c-14-1-27-7-38-18 15-6 29-3 41 7-1 4-2 7-3 11Z"/>
+  <path fill="#267b3d" d="M116 139c13-11 27-15 43-11-10 13-23 18-39 17-1-2-3-4-4-6Z"/>
+</svg>

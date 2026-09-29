@@ -1,0 +1,19 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Local secrets/config - never commit these (the *.example templates ARE committed)
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+
+# Uploaded files (complaint photos) created at runtime
+backend/uploads/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

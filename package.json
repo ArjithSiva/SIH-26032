@@ -1,0 +1,18 @@
+{
+  "name": "procurement-system-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root convenience scripts for running the whole project locally in one step - see LOCAL_DEMO.md. Not used by Render or Vercel, which each deploy backend/ and frontend/ independently.",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently -n backend,frontend -c green,cyan \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "seed": "npm run seed --prefix backend",
+    "build:offline": "npm run build --prefix frontend",
+    "start:offline": "cross-env SERVE_FRONTEND=true npm start --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  }
+}
